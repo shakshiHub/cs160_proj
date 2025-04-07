@@ -2,41 +2,113 @@ body {
     background-color: #07210e;
 }
 
-.container {
+.home-container {
     height: 100vh; /* req for horizontal and vertical centering of container */
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 .box {
-    width: 400px;
-    height: 400px;
-    display: flex;
-    align-items: center; /*centering text vertically*/
-    justify-content: center; /*centering text horizontally*/
-    color: white;
-    border: 2px solid white;
-    box-shadow:
-        0 0 40px rgba(255, 255, 255, 0.8),
-        0 0 80px rgba(255, 255, 255, 0.5),
-        0 0 120px rgba(255, 255, 255, 0.9);
-
+    width: 450px;
+    height: 450px;
 }
 
-.login {
-    background-color: #F5EEDC;
-    color: black;
+.box-wrapper {
+   display: flex;
+   border-radius: 20px;
+   border: 1px solid white;
+   box-shadow:
+           0 0 40px rgba(255, 255, 255, 0.8),
+           0 0 80px rgba(255, 255, 255, 0.5),
+           0 0 120px rgba(255, 255, 255, 0.9);
+}
+
+.login-content {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
+    background-color: #F7D3B3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+.login-content form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 90%;
+}
+
+.login-content input {
+    width: 60%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #FBEAD8;
+
+}
+
+.sign-in-button {
+    width: 69%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: #1B3815;
+    color: #f7dcc3;
+    cursor: pointer;
+}
+
+
+.create-account {
+    width: 62%;
+    padding: 12px;
+    background-color: transparent;
+    color: #1B3815;
+    border: 2px solid #1B3815;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.login-content h2 {
+    font-size: 40px;
+    color: #1B3815;
+    margin-bottom: 25px;
+    margin-top: 50px;
+}
 
 .pic {
-    background-image: url("food.jpg");
-    background-size: cover;
-    background-position: center;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
+    background-image: url("photos/food.png");
+    background-size: cover;
+    background-position: center;
 }
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 62%;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.divider hr {
+  flex: 1;
+  height: 1px;
+  background-color: #7F6041;
+  border: none;
+}
+
+.divider span {
+  padding: 0 10px;
+  color: #7F6041;
+  font-size: 20px;
+}
+
+
