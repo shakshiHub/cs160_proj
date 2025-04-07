@@ -1,13 +1,42 @@
-/* random filler code to start */
 body {
-    background-color: black;
+    background-color: #07210e;
 }
 
-h1 {
-    color: white;
+.container {
+    height: 100vh; /* req for horizontal and vertical centering of container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
-p {
+.box {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    align-items: center; /*centering text vertically*/
+    justify-content: center; /*centering text horizontally*/
     color: white;
-    font-family: "Lucida Console", "Courier New", monospace;
+    border: 2px solid white;
+    box-shadow:
+        0 0 40px rgba(255, 255, 255, 0.8),
+        0 0 80px rgba(255, 255, 255, 0.5),
+        0 0 120px rgba(255, 255, 255, 0.9);
+
+}
+
+.login {
+    background-color: #F5EEDC;
+    color: black;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+
+.pic {
+    background-image: url("food.jpg");
+    background-size: cover;
+    background-position: center;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
 }
