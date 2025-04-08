@@ -15,19 +15,19 @@ body {
 }
 
 .box-wrapper {
-   display: flex;
-   border-radius: 20px;
-   border: 1px solid white;
-   box-shadow:
-           0 0 40px rgba(255, 255, 255, 0.8),
-           0 0 80px rgba(255, 255, 255, 0.5),
-           0 0 120px rgba(255, 255, 255, 0.9);
+    display: flex;
+    border-radius: 20px;
+    border: 1px solid white;
+    box-shadow:
+        0 0 40px rgba(255, 255, 255, 0.8),
+        0 0 80px rgba(255, 255, 255, 0.5),
+        0 0 120px rgba(255, 255, 255, 0.9);
 }
 
 .login-content {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    background-color: #F7D3B3;
+    background-color: #FCCF9E;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,7 +58,7 @@ body {
     border-radius: 5px;
     font-size: 20px;
     background-color: #1B3815;
-    color: #f7dcc3;
+    color: #f7dcc4;
     cursor: pointer;
 }
 
@@ -90,25 +90,25 @@ body {
 }
 
 .divider {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  width: 62%;
-  justify-content: center;
-  margin: 10px 0;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 62%;
+    justify-content: center;
+    margin: 10px 0;
 }
 
 .divider hr {
-  flex: 1;
-  height: 1px;
-  background-color: #7F6041;
-  border: none;
+    flex: 1;
+    height: 1px;
+    background-color: #7F6041;
+    border: none;
 }
 
 .divider span {
-  padding: 0 10px;
-  color: #7F6041;
-  font-size: 20px;
+    padding: 0 10px;
+    color: #7F6041;
+    font-size: 20px;
 }
 
 
