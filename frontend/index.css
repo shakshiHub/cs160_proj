@@ -52,7 +52,7 @@ body {
 }
 
 .sign-in-button {
-    width: 69%;
+    width: 68%;
     padding: 15px;
     border: none;
     border-radius: 5px;
@@ -60,11 +60,11 @@ body {
     background-color: #1B3815;
     color: #f7dcc4;
     cursor: pointer;
+    font-family: Arial;
 }
 
-
 .create-account {
-    width: 62%;
+    width: 55%;
     padding: 12px;
     background-color: transparent;
     color: #1B3815;
@@ -72,6 +72,10 @@ body {
     border-radius: 5px;
     font-size: 20px;
     cursor: pointer;
+    text-decoration: none;
+    font-family: Arial;
+    display: flex;
+    justify-content: center;
 }
 
 .login-content h2 {
