@@ -1,0 +1,68 @@
+body {
+    background: linear-gradient(240deg, #bdc438, #bdc438, #85a13c, #6d8e3a, #577b37, #436831, #32542a, #224021);
+}
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-account-container {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.1); /* white with 30% opacity*/
+    border-radius: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+}
+
+input {
+    width: 60%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #FBEAD8;
+
+}
+
+.create-account-button {
+    width: 66%;
+    padding: 18px;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    background-color: #1B3815;
+    color: #FBEAD8;
+    cursor: pointer;
+    font-family: "Archivo Black", sans-serif;
+    transition: transform 0.2s ease;
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+h2 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: 30px;
+    color: #1B3815;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+p{
+    font-family: "Archivo Black", sans-serif;
+    color: #162b12;
+}
+
+

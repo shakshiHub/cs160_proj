@@ -61,7 +61,15 @@ body {
     color: #f7dcc4;
     cursor: pointer;
     font-family: Arial;
+    transition: transform 0.2s ease;
 }
+
+.sign-in-button:hover {
+   background-color: #2b4526;
+   transform: scale(1.03);
+}
+
+
 
 .create-account {
     width: 55%;
@@ -76,6 +84,11 @@ body {
     font-family: Arial;
     display: flex;
     justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.create-account:hover {
+  transform: scale(1.03);
 }
 
 .login-content h2 {
