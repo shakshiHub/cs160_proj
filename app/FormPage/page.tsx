@@ -49,7 +49,7 @@ const FormPage = () => {
             </h2>
             <div className="border-2 w-10 border-blue-950 mb-4" />
             {/* Add description input or fields here */}
-            <Textarea placeholder="Type your message here." className="bg-gray-100 border-none text-gray-500 font-normal hover:shadow-2xl w-full h-32 p-4 rounded-md focus:text-blue-950 hover:text-blue-950 placeholder-gray-200 hover:placeholder-blue-950"/>
+            <Textarea placeholder="Type your description here." className="bg-gray-100 border-none text-gray-500 font-normal hover:shadow-2xl w-full h-32 p-4 rounded-md focus:text-blue-950 hover:text-blue-950 placeholder-gray-200 hover:placeholder-blue-950"/>
             </div>
           </div>
         </div>

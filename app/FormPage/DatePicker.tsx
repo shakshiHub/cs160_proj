@@ -26,7 +26,7 @@ export function DatePickerDemo() {
             <Button
               variant="ghost"
               className={cn(
-                "w-full h-full text-left text-m bg-gray-100 outline-none text-gray-500 font-normal px-0 hover:bg-gray-100 focus:ring-0",
+                "w-full h-full text-left text-m bg-gray-100 outline-none text-gray-400 font-normal px-0 hover:bg-gray-100 focus:ring-0",
                 !date && "text-gray-400"
               )}
             >
@@ -36,13 +36,13 @@ export function DatePickerDemo() {
             </Button>
           </div>
         </PopoverTrigger>
-        <PopoverContent className="w-auto p-0 bg-white border shadow-lg rounded-xl mt-2">
+        <PopoverContent className="w-auto p-0 bg-white border-none shadow-lg rounded-xl mt-2">
           <Calendar
             mode="single"
             selected={date}
             onSelect={setDate}
             initialFocus
-            className="rounded-md bg-white text-black"
+            className="rounded-md bg-white text-blue-950 bg-gray-100"
           />
         </PopoverContent>
       </Popover>
