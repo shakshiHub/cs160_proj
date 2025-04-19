@@ -10,25 +10,19 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { cn } from '@/lib/utils';
 
 const TimePickerClient = () => {
-  const [time, setTime] = useState<string | null>('10:00 AM'); // Default to 12-hour format
+  const [time, setTime] = useState<string | null>('10:00'); // Store time in 24-hour format
   const [isPopoverOpen, setIsPopoverOpen] = useState(false); // State to control popover visibility
 
-  const handleTimeChange = (value: string | null) => {
-    if (value === null) {
-      setTime(null); // Handle the case where no time is selected
-      return;
-    }
-
-    // Convert the time to 12-hour format with AM/PM
+  const formatTime = (value: string | null) => {
+    if (!value) return '';
     const [hours, minutes] = value.split(':').map(Number);
     const isPM = hours >= 12;
     const formattedHours = hours % 12 || 12; // Convert 0 to 12 for 12-hour format
-    const formattedTime = `${formattedHours}:${minutes.toString().padStart(2, '0')} ${isPM ? 'PM' : 'AM'}`;
-    setTime(formattedTime);
+    return `${formattedHours}:${minutes.toString().padStart(2, '0')} ${isPM ? 'PM' : 'AM'}`;
   };
 
   const handleConfirm = () => {
-    alert(`Selected Time: ${time}`);
+    alert(`Selected Time: ${formatTime(time)}`);
     setIsPopoverOpen(false); // Close the popover
   };
 
@@ -47,7 +41,7 @@ const TimePickerClient = () => {
               )}
             >
               <div className="w-full text-left">
-                {time ? time : <span>Pick a time</span>}
+                {time ? formatTime(time) : <span>Pick a time</span>}
               </div>
             </Button>
           </div>
@@ -67,10 +61,10 @@ const TimePickerClient = () => {
           <div className="rounded-md bg-gray-100 text-black">
             <div className="border-2 border-gray-300 rounded-md p-2">
               <TimePicker
-                onChange={handleTimeChange} // Updates the state when the time changes
-                value={time} // Binds the selected time to the component
+                onChange={setTime} // Directly update the time in 24-hour format
+                value={time} // Pass the time in 24-hour format
                 disableClock={true} // Hides the clock icon
-                format="h:mm a" // Sets the time format to 12-hour with AM/PM
+                format="h:mm a" // Display the time in 12-hour format with AM/PM
                 className="w-full text-black"
               />
             </div>

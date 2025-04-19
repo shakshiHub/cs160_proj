@@ -42,7 +42,7 @@ export function DatePickerDemo() {
             selected={date}
             onSelect={setDate}
             initialFocus
-            className="rounded-md bg-white text-blue-950 bg-gray-100"
+            className="rounded-md text-blue-950 bg-gray-100"
           />
         </PopoverContent>
       </Popover>
