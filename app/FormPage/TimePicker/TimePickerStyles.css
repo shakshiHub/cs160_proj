@@ -1,0 +1,19 @@
+/* TimePickerStyles.css */
+.react-time-picker {
+    border: none !important; /* Removes the outer border */
+    box-shadow: none !important; /* Removes any shadow */
+  }
+  
+  .react-time-picker__wrapper {
+    border: none !important; /* Removes the wrapper border */
+  }
+  
+  .react-time-picker__inputGroup {
+    border: none !important; /* Removes the input group border */
+    background-color: transparent; /* Optional: Makes the background transparent */
+  }
+  
+  .react-time-picker__inputGroup__input {
+    border: none !important; /* Removes the input field border */
+    outline: none !important; /* Removes the focus outline */
+  }
