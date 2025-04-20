@@ -11,6 +11,12 @@ export default function Home() {
       <div className="p-3">
         <Link href="/FormPage">Form Page</Link>
       </div>
+      <div className="p-3">
+        <Link href="/AdminSignUpPage">Admin Sign Up Page</Link>
+      </div>
+      <div className="p-3">
+        <Link href="/StudentSignUpPage">Student Sign Up Page</Link>
+      </div>
     </main>
   );
 }

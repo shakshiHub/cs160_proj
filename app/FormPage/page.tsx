@@ -45,7 +45,7 @@ const FormPage = () => {
             {/* Right column */}
             <div className="flex flex-col w-full md:w-1/2 items-center">
               <h2 className="text-2xl font-bold text-blue-950 mb-2">
-                Enter Time of Event
+                Time that Students can Pickup Food
               </h2>
               <div className="border-2 w-10 border-blue-950 mb-8" />
               <TimePicker></TimePicker>
