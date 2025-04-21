@@ -1,6 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { MdMailOutline, MdOutlineVpnKey } from "react-icons/md";
+import { FaArrowLeft } from "react-icons/fa";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 
 
@@ -31,7 +32,7 @@ const SignInPage = () => {
                             <label className="flex items-center text-xs"><input type="checkbox" name="remember" className="mr-1"/>Remember Me</label>
                             <Link href="#" className="text-xs">Forgot Password?</Link>
                         </div>
-                        <Link href="#" className="border-2 border-blue-950 rounded-full px-12 py-2 inline-block font-semibold hover:bg-blue-950 hover:text-white text-blue-950">Sign In</Link>
+                        <Link href="#" className="border-2 border-blue-950 rounded-full px-12 py-2 inline-block font-semibold hover:bg-blue-950 hover:text-white text-blue-950 transition-colors duration-200">Sign In</Link>
                     </div>
                 </div>
             </div> {/* Sign in Section*/}          
@@ -42,8 +43,8 @@ const SignInPage = () => {
                     <div className="flex flex-col items-center space-y-2">
                         <div className="border-2 w-10 border-white"></div>
                         <Link
-                            href="#"
-                            className="border-2 border-white rounded-full px-12 py-2 inline-block font-semibold hover:bg-white hover:text-blue-950">
+                            href="/StudentSignUpPage"
+                            className="border-2 border-white rounded-full px-12 py-2 inline-block font-semibold hover:bg-white hover:text-blue-950 transition-colors duration-200">
                             Sign Up
                         </Link>
                     </div>
@@ -52,8 +53,8 @@ const SignInPage = () => {
                     <div className="flex flex-col items-center space-y-2">
                         <div className="border-2 w-10 border-white"></div>
                         <Link
-                            href="#"
-                            className="border-2 border-white rounded-full px-12 py-2 inline-block font-semibold hover:bg-white hover:text-blue-950">
+                            href="/AdminSignUpPage"
+                            className="border-2 border-white rounded-full px-12 py-2 inline-block font-semibold hover:bg-white hover:text-blue-950 transition-colors duration-200">
                             Sign Up
                         </Link>
                     </div>
