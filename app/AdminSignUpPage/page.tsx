@@ -35,28 +35,11 @@ const AdminSignUpPage = () => {
                     </div>
                 </div>
             </div> {/* Sign in Section*/}          
-            <AuroraBackground className="rounded-tr-2xl rounded-br-2xl py-20 px-12 text-white">
+            <AuroraBackground className="rounded-tr-2xl rounded-br-2xl py-20 px-12 text-white min-h-131 max-w-112">
                 <div className="relative z-10">
-                    <h2 className="text-3xl font-bold mb-2">Are you a Spartan?</h2>
-                    <h2 className="text-2xl font-bold mb-2">Sign up here</h2>
-                    <div className="flex flex-col items-center space-y-2">
-                        <div className="border-2 w-10 border-white"></div>
-                        <Link
-                            href="#"
-                            className="border-2 border-white rounded-full px-12 py-2 inline-block font-semibold hover:bg-white hover:text-blue-950 transition-colors duration-200">
-                            Sign Up
-                        </Link>
-                    </div>
-                    <h2 className="mt-10 text-3xl font-bold mb-2 pt-2">Faculty with no Account?</h2>
-                    <h2 className="text-2xl font-bold mb-2">Sign up here</h2>
-                    <div className="flex flex-col items-center space-y-2">
-                        <div className="border-2 w-10 border-white"></div>
-                        <Link
-                            href="#"
-                            className="border-2 border-white rounded-full px-12 py-2 inline-block font-semibold hover:bg-white hover:text-blue-950 transition-colors duration-200">
-                            Sign Up
-                        </Link>
-                    </div>
+                    <h2 className="text-3xl font-bold">How it Works</h2>
+                    <div className="border-2 w-10 border-white inline-block mb-2"></div>
+                    <h2 className="text-2xl font-bold mb-2 mr-10 ml-10">After signing up, you'll have the ability to send out information regarding the leftover food at your event.</h2>
                 </div>
             </AuroraBackground>
         </div>
