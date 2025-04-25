@@ -57,7 +57,7 @@ const FormPage = () => {
             </div>
           </div>
           <div className="flex items-center justify-center">
-          <Link href="#" className="border-2 border-blue-950 rounded-full px-12 py-2 inline-block font-semibold hover:bg-blue-950 hover:text-white text-blue-950 mt-10">Submit</Link>
+          <Link href="#" className="border-2 border-blue-950 rounded-full px-12 py-2 inline-block font-semibold hover:bg-blue-950 hover:text-white text-blue-950 mt-10 transition-colors duration-200">Submit</Link>
           </div>
         </div>
       </div>

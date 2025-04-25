@@ -1,8 +1,9 @@
 import React from 'react'
 import Link from 'next/link'
 import { MdMailOutline, MdOutlineVpnKey } from "react-icons/md";
-import { FaArrowLeft } from "react-icons/fa";
+import { FaArrowLeft, FaPhone } from "react-icons/fa";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { MdDriveFileRenameOutline } from "react-icons/md";
 
 const AdminSignUpPage = () => {
   return (
@@ -15,19 +16,19 @@ const AdminSignUpPage = () => {
                 </div>
                 <div className = "py-15">
                     <h2 className="text-3xl font-bold text-blue-950 mb-2">
-                        Faculty Sign Up
+                        Admin Sign Up
                     </h2>
                     <div className="border-2 w-10 border-blue-950 inline-block mb-4 mt-1"></div>
                     <div className="flex flex-col items-center">
-                        <div className="bg-gray-100 w-64 p-2 flex items-center rounded-2xl mb-5">
+                        <div className="bg-gray-100 w-64 p-2 flex items-center rounded-2xl mb-3 hover:shadow-2xl transition-shadow duration-200">
                             <MdMailOutline className="text-gray-400 mx-2 my-3"/>
                             <input type="email" name="email" placeholder="Email" pattern="^[a-zA-Z0-9._%+-]+@sjsu\.com$" required className="bg-gray-100 outline-none text-m flex-1"></input>
                         </div>
-                        <div className="bg-gray-100 w-64 p-2 flex items-center rounded-2xl mb-3">
+                        <div className="bg-gray-100 w-64 p-2 flex items-center rounded-2xl mb-3 hover:shadow-2xl transition-shadow duration-200">
                             <MdOutlineVpnKey className="text-gray-400 mx-2 my-3"/>
                             <input type="password" name="password" placeholder="Password" className="bg-gray-100 outline-none text-m flex-1"></input>
                         </div>
-                        <div className="bg-gray-100 w-64 p-2 flex items-center rounded-2xl">
+                        <div className="bg-gray-100 w-64 p-2 flex items-center rounded-2xl hover:shadow-2xl transition-shadow duration-200">
                             <MdOutlineVpnKey className="text-gray-400 mx-2 my-3"/>
                             <input type="password" name="confirmPassword" placeholder="Confirm Password" className="bg-gray-100 outline-none text-m flex-1"></input>
                         </div>
@@ -35,11 +36,14 @@ const AdminSignUpPage = () => {
                     </div>
                 </div>
             </div> {/* Sign in Section*/}          
-            <AuroraBackground className="rounded-tr-2xl rounded-br-2xl py-20 px-12 text-white min-h-131 max-w-112">
+            <AuroraBackground className="rounded-tr-2xl rounded-br-2xl py-20 px-12 text-white min-h-131 max-w-112 min-w-100">
                 <div className="relative z-10">
-                    <h2 className="text-3xl font-bold">How it Works</h2>
-                    <div className="border-2 w-10 border-white inline-block mb-2"></div>
-                    <h2 className="text-2xl font-bold mb-2 mr-10 ml-10">After signing up, you'll have the ability to send out information regarding the leftover food at your event.</h2>
+                    <h2 className="text-3xl font-bold">Additional Info</h2>
+                    <div className="border-2 w-10 border-white inline-block mb-2 hover:shadow-2xl transition-shadow duration-200"></div>
+                    <div className="bg-blue-100 w-64 p-2 flex items-center rounded-2xl mb-5 hover:shadow-2xl transition-shadow duration-200 shadow-black">
+                        <MdDriveFileRenameOutline className="text-gray-400 mx-2 my-3"/>
+                        <input type="name" name="name" placeholder="Name" required className="bg-blue-100 text-black outline-none text-m flex-1"></input>
+                    </div>
                 </div>
             </AuroraBackground>
         </div>
