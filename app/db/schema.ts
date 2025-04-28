@@ -9,6 +9,16 @@ export const usersTable = sqliteTable('users', {
     password: text('password').notNull()
 });
 
+export const adminTable = sqliteTable('admin', { // no phone input
+    id: integer('id').primaryKey(),  // should auto increment in sqlite
+    name: text('name').notNull(),
+    email: text('email').unique().notNull(),
+    password: text('password').notNull()
+});
+
+
 export type InsertUser = typeof usersTable.$inferInsert;
 export type SelectUser = typeof usersTable.$inferSelect;
 
+export type InserAdmin = typeof adminTable.$inferInsert;
+export type SelectAdmin = typeof adminTable.$inferSelect;

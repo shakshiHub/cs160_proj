@@ -1,11 +1,51 @@
-import React from 'react'
-import Link from 'next/link'
+'use client';
+import React, { useState } from 'react';
+import Link from 'next/link';
 import { MdMailOutline, MdOutlineVpnKey } from "react-icons/md";
 import { FaArrowLeft, FaPhone } from "react-icons/fa";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import { MdDriveFileRenameOutline } from "react-icons/md";
 
 const AdminSignUpPage = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        password: '',
+        confirmPassword: '',
+      });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
+      };
+    
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+    
+        // Validate form
+        if (formData.password !== formData.confirmPassword) {
+            alert('Passwords do not match!');
+            return;
+        }
+  
+        // Send user data to the backend (API route)
+        const response = await fetch('/api/AdminSignUp', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
+  
+        if (response.ok) {
+            alert('Sign-up successful!');
+            // redirect to sign-in page STILL HAVENT SET UP SIGN IN FUNCTION- sorry
+            window.location.href = '/SignInPage';
+        } else {
+            alert('Sign-up failed. Please try again.');
+        }
+    };
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-150">
         <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
@@ -20,19 +60,52 @@ const AdminSignUpPage = () => {
                     </h2>
                     <div className="border-2 w-10 border-blue-950 inline-block mb-4 mt-1"></div>
                     <div className="flex flex-col items-center">
+
+                    <form onSubmit={handleSubmit}>
                         <div className="bg-gray-100 w-64 p-2 flex items-center rounded-2xl mb-3 hover:shadow-2xl transition-shadow duration-200">
                             <MdMailOutline className="text-gray-400 mx-2 my-3"/>
-                            <input type="email" name="email" placeholder="Email" pattern="^[a-zA-Z0-9._%+-]+@sjsu\.com$" required className="bg-gray-100 outline-none text-m flex-1"></input>
+                            <input 
+                            type="email" 
+                            name="email" 
+                            placeholder="Email" 
+                            value={formData.email}
+                             onChange={handleChange}
+                            pattern="^[a-zA-Z0-9._%+-]+@sjsu\.com$" 
+                            required 
+                            className="bg-gray-100 outline-none text-m flex-1"
+                            />
                         </div>
                         <div className="bg-gray-100 w-64 p-2 flex items-center rounded-2xl mb-3 hover:shadow-2xl transition-shadow duration-200">
                             <MdOutlineVpnKey className="text-gray-400 mx-2 my-3"/>
-                            <input type="password" name="password" placeholder="Password" className="bg-gray-100 outline-none text-m flex-1"></input>
+                            <input 
+                            type="password" 
+                            name="password" 
+                            placeholder="Password" 
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                            className="bg-gray-100 outline-none text-m flex-1"
+                            />
                         </div>
                         <div className="bg-gray-100 w-64 p-2 flex items-center rounded-2xl hover:shadow-2xl transition-shadow duration-200">
                             <MdOutlineVpnKey className="text-gray-400 mx-2 my-3"/>
-                            <input type="password" name="confirmPassword" placeholder="Confirm Password" className="bg-gray-100 outline-none text-m flex-1"></input>
+                            <input 
+                            type="password" 
+                            name="confirmPassword" 
+                            placeholder="Confirm Password" 
+                            value={formData.confirmPassword}
+                            onChange={handleChange}
+                            required
+                            className="bg-gray-100 outline-none text-m flex-1"
+                            />
                         </div>
-                        <Link href="#" className="border-2 border-blue-950 rounded-full px-12 py-2 inline-block font-semibold hover:bg-blue-950 hover:text-white text-blue-950 mt-5 transition-colors duration-200">Sign Up</Link>
+                        <button
+                            type="submit"
+                            className="border-2 border-blue-950 rounded-full px-12 py-2 inline-block font-semibold hover:bg-blue-950 hover:text-white text-blue-950 mt-5 transition-colors duration-200"
+                          >
+                            Sign Up
+                        </button>
+                     </form>
                     </div>
                 </div>
             </div> {/* Sign in Section*/}          
@@ -42,8 +115,17 @@ const AdminSignUpPage = () => {
                     <div className="border-2 w-10 border-white inline-block mb-2 hover:shadow-2xl transition-shadow duration-200"></div>
                     <div className="bg-blue-100 w-64 p-2 flex items-center rounded-2xl mb-5 hover:shadow-2xl transition-shadow duration-200 shadow-black">
                         <MdDriveFileRenameOutline className="text-gray-400 mx-2 my-3"/>
-                        <input type="name" name="name" placeholder="Name" required className="bg-blue-100 text-black outline-none text-m flex-1"></input>
+                        <input 
+                        type="name"
+                         name="name" 
+                         placeholder="Name" 
+                         value={formData.name}
+                         onChange={handleChange}
+                         required
+                         className="bg-blue-100 text-black outline-none text-m flex-1"
+                         />
                     </div>
+                    
                 </div>
             </AuroraBackground>
         </div>

@@ -4,7 +4,7 @@ import { defineConfig } from 'drizzle-kit';
 config({ path: '.env.local' });
 
 const TURSO_CONNECTION_URL='add-your-personal-turso-url';
-const TURSO_AUTH_TOKEN='add-your-personal-turso-token';
+const TURSO_AUTH_TOKEN='add-your-personal-turso-tokem';
 
 export default defineConfig({
   schema: './app/db/schema.ts',
