@@ -97,30 +97,6 @@ const StudentSignUpPage = () => {
                       className="bg-gray-100 outline-none text-m flex-1"
                     />
                   </div>
-                  <div className="bg-blue-100 w-64 p-2 flex items-center rounded-2xl mb-3 hover:shadow-2xl transition-shadow duration-200">
-                    <MdDriveFileRenameOutline className="text-gray-400 mx-2 my-3" />
-                    <input
-                      type="text"
-                      name="name"
-                      placeholder="Name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      required
-                      className="bg-blue-100 text-black outline-none text-m flex-1"
-                    />
-                  </div>
-                  <div className="bg-blue-100 w-64 p-2 flex items-center rounded-2xl mb-3 hover:shadow-2xl transition-shadow duration-200">
-                    <FaPhone className="text-gray-400 mx-2 my-3" />
-                    <input
-                      type="tel"
-                      name="phone"
-                      placeholder="Phone Number"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      required
-                      className="bg-blue-100 text-black outline-none text-m flex-1"
-                    />
-                  </div>
                   <button
                     type="submit"
                     className="border-2 border-blue-950 rounded-full px-12 py-2 inline-block font-semibold hover:bg-blue-950 hover:text-white text-blue-950 mt-5 transition-colors duration-200"
@@ -135,6 +111,33 @@ const StudentSignUpPage = () => {
             <div className="relative z-10">
               <h2 className="text-3xl font-bold">Additional Info</h2>
               <div className="border-2 w-10 border-white inline-block mb-2 hover:shadow-2xl transition-shadow duration-200"></div>
+
+              <div className="bg-blue-100 w-64 p-2 flex items-center rounded-2xl mb-3 hover:shadow-2xl transition-shadow duration-200">
+                    <MdDriveFileRenameOutline className="text-gray-400 mx-2 my-3" />
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="bg-blue-100 text-black outline-none text-m flex-1"
+                    />
+                  </div>
+
+                  <div className="bg-blue-100 w-64 p-2 flex items-center rounded-2xl mb-3 hover:shadow-2xl transition-shadow duration-200">
+                    <FaPhone className="text-gray-400 mx-2 my-3" />
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      required
+                      className="bg-blue-100 text-black outline-none text-m flex-1"
+                    />
+                  </div>
+                  
             </div>
           </AuroraBackground>
         </div>
