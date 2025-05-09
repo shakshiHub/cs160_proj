@@ -39,7 +39,7 @@ const AdminSignUpPage = () => {
   
         if (response.ok) {
             alert('Sign-up successful!');
-            // redirect to sign-in page STILL HAVENT SET UP SIGN IN FUNCTION- sorry
+            // redirect to sign-in page (now implemented and working)
             window.location.href = '/SignInPage';
         } else {
             alert('Sign-up failed. Please try again.');
