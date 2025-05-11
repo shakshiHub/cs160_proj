@@ -16,9 +16,13 @@ const FormPage = () => {
     message: '',
   });
   
-  
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!formData.date || !formData.time || !formData.building || !formData.message) {
+      alert('Please fill out all fields.');
+      return;
+    }
 
     console.log("Submitting form with data:", formData);
 
@@ -67,7 +71,10 @@ const FormPage = () => {
                 Enter Date of Event
               </h2>
               <div className="border-2 w-10 border-blue-950 mb-8" />
-              <DatePickerDemo onChange={(date: string) => setFormData({ ...formData, date })}/>
+              {/* <DatePickerDemo onChange={(date: string) => setFormData({ ...formData, date })}/>*/ }
+              <Textarea placeholder="EX. May 14th, 2025" className="bg-gray-100 border-none text-gray-500 font-normal hover:shadow-2xl w-3/4 h-20 p-4 rounded-md focus:text-blue-950 hover:text-blue-950 placeholder-gray-200 hover:placeholder-blue-950 mb-5" 
+                value={formData.date} onChange={(e) => setFormData({ ...formData, date: e.target.value }) } />
+            
               <h2 className="text-2xl font-bold text-blue-950 mb-2 mt-5">
                 What Food will be Available?
               </h2>
@@ -83,7 +90,10 @@ const FormPage = () => {
                 Time that Students can Pickup Food
               </h2>
               <div className="border-2 w-10 border-blue-950 mb-8" />
-              <TimePicker onChange={(time: string) => setFormData({ ...formData, time }) }/>
+              {/*<TimePicker onChange={(time: string) => setFormData({ ...formData, time }) }/>*/}
+              <Textarea placeholder="EX. HH:MM" className="bg-gray-100 border-none text-gray-500 font-normal hover:shadow-2xl w-3/4 h-20 p-4 rounded-md focus:text-blue-950 hover:text-blue-950 placeholder-gray-200 hover:placeholder-blue-950 mb-5" 
+                value={formData.time} onChange={(e) => setFormData({ ...formData, time: e.target.value }) } />
+            
               <h2 className="text-2xl font-bold text-blue-950 mb-2 mt-5">
                 Building and Room Number
               </h2>

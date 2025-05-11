@@ -79,7 +79,7 @@ const TimePickerClient: React.FC<TimePickerClientProps> = ({ onChange }) => {
               />
             </div>
             <div className="flex justify-center items-center mt-4">
-              <button
+              <button type="button" 
                 onClick={handleConfirm}
                 className="border-2 border-blue-950 rounded-full px-12 py-2 inline-block font-semibold hover:bg-blue-950 hover:text-white text-blue-950"
               >
