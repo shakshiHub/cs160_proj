@@ -13,8 +13,24 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover"
 
-export function DatePickerDemo() {
+
+type DatePickerDemoProps = {
+  onChange: (date: string) => void;
+};
+
+
+export const DatePickerDemo: React.FC<DatePickerDemoProps> = ({ onChange }) => {
   const [date, setDate] = React.useState<Date>()
+
+  const handleDateChange = (selectedDate: Date | undefined) => {
+    setDate(selectedDate);
+    
+    if (selectedDate) {
+      onChange(selectedDate.toISOString());
+    }
+  };
+
+
 
   return (
     <div className="bg-gray-100 w-64 h-12 flex items-center mb-4 rounded-2xl hover:shadow-2xl">

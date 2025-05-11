@@ -9,7 +9,14 @@ import { Button } from '@/components/ui/button';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
 
-const TimePickerClient = () => {
+
+type TimePickerClientProps = {
+  onChange: (time: string) => void;
+};
+
+
+
+const TimePickerClient: React.FC<TimePickerClientProps> = ({ onChange }) => {
   const [time, setTime] = useState<string | null>('10:00'); // Store time in 24-hour format
   const [isPopoverOpen, setIsPopoverOpen] = useState(false); // State to control popover visibility
 
@@ -22,8 +29,11 @@ const TimePickerClient = () => {
   };
 
   const handleConfirm = () => {
-    alert(`Selected Time: ${formatTime(time)}`);
-    setIsPopoverOpen(false); // Close the popover
+
+    if (time) {
+      onChange(time); // should send val back
+      setIsPopoverOpen(false);
+    }
   };
 
   return (

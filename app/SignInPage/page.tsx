@@ -13,28 +13,39 @@ const SignInPage = () => {
 
   const handleSignIn = async () => {
     setErrorMsg('');
-
+  
     try {
-      const response = await fetch('/api/AdminSignIn', {
+      const response = await fetch('/api/SignIn', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({ email, password })
       });
-
+  
       const data = await response.json();
-
+  
       if (response.ok) {
-        alert('Signed in successfully!');
+        console.log('Signed in successfully!');
         window.location.href = '/FormPage';
-    } else {
-        alert('Sign-up failed. Please try again.');
-    }
-
+      } else {
+        switch (response.status) { // added functionality to show type of error for sign in
+          case 400:
+            setErrorMsg(data.error || 'All fields are required.');
+            break;
+          case 404:
+            setErrorMsg(data.error || 'Admin not found.');
+            break;
+          case 401:
+            setErrorMsg(data.error || 'Incorrect password.');
+            break;
+          case 500:
+          default:
+            setErrorMsg(data.error || 'An unexpected error occurred.');
+        }
+      }
     } catch (error) {
-      setErrorMsg('Something went wrong');
-      return;
+      setErrorMsg('Failed to connect to server.');
     }
   };
 
