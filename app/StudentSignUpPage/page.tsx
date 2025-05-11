@@ -23,8 +23,20 @@ const StudentSignUpPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    const { password, confirmPassword } = formData;
+    // requirements for password
+    const hasUpperCase = [...password].some(char => char >= 'A' && char <= 'Z'); // has at least 1 uppercase
+    const hasLowerCase = [...password].some(char => char >= 'a' && char <= 'z'); // has at least 1 lowercase
+    const hasNumber = [...password].some(char => char >= '0' && char <= '9'); // has at least 1 number
+    const isLong = password.length >= 8; // is 8 chars long
+  
+    if (!hasUpperCase || !hasLowerCase || !hasNumber || !isLong) {
+      alert('Password must be at least 8 characters long and includ: an uppercase letter, a lowercase letter, and a number!');
+      return;
+    }
+
     // Validate form
-    if (formData.password !== formData.confirmPassword) {
+    if (password !== confirmPassword) {
       alert('Passwords do not match!');
       return;
     }
