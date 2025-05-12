@@ -30,10 +30,10 @@ const AdminSignUpPage = () => {
         const isLong = password.length >= 8; // is 8 chars long
   
         if (!hasUpperCase || !hasLowerCase || !hasNumber || !isLong) {
-            alert('Password must be at least 8 characters long and includ: an uppercase letter, a lowercase letter, and a number!');
+            alert('Password must be at least 8 characters long and includ: an uppercase letter, a lowercase letter, and a number.');
             return;
         }
-        
+
         // Validate form
         if (formData.password !== formData.confirmPassword) {
             alert('Passwords do not match!');

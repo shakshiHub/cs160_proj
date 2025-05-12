@@ -19,7 +19,25 @@ const FormPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.date || !formData.time || !formData.building || !formData.message) {
+
+    const { date, time, building, message } = formData;
+    // requirements for date and time
+    
+    const hasFormatTime = time.includes(':') && (time.toLowerCase().includes('am') || time.toLowerCase().includes('pm'));
+    const hasFormatDate = date.includes(',') && [...date].some(char => char >= '0' && char <= '9');
+
+    if (!hasFormatTime ) {
+      alert('Time must be in the format: HH:MM and include am/pm specification. EX: 4:30 pm');
+      return;
+    }
+
+    if (!hasFormatDate ) {
+      alert('Date must be in the format: Month Day, Year. EX: May 14th, 2025');
+      return;
+    }
+
+
+    if (!date || !time || !building || !message) {
       alert('Please fill out all fields.');
       return;
     }

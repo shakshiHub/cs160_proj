@@ -23,15 +23,23 @@ const StudentSignUpPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const { password, confirmPassword } = formData;
+    const { password, confirmPassword, phone } = formData;
     // requirements for password
     const hasUpperCase = [...password].some(char => char >= 'A' && char <= 'Z'); // has at least 1 uppercase
     const hasLowerCase = [...password].some(char => char >= 'a' && char <= 'z'); // has at least 1 lowercase
     const hasNumber = [...password].some(char => char >= '0' && char <= '9'); // has at least 1 number
     const isLong = password.length >= 8; // is 8 chars long
+
+    // requirements for phone number
+    const isLongPhone = phone.length == 10; // is 10 chars long (xxx xxx xxxx)
   
     if (!hasUpperCase || !hasLowerCase || !hasNumber || !isLong) {
-      alert('Password must be at least 8 characters long and includ: an uppercase letter, a lowercase letter, and a number!');
+      alert('Password must be at least 8 characters long and includ: an uppercase letter, a lowercase letter, and a number.');
+      return;
+    }
+
+    if (!isLongPhone) {
+      alert('Phone number must be valid length (10 digits) and only include numbers.');
       return;
     }
 
@@ -146,6 +154,7 @@ const StudentSignUpPage = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       required
+                      maxLength={10}
                       className="bg-blue-100 text-black outline-none text-m flex-1"
                     />
                   </div>
