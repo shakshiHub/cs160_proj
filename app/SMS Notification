@@ -1,0 +1,17 @@
+<label>
+  <input
+    type="checkbox"
+    name="smsOptIn"
+    checked={formData.smsOptIn}
+    onChange={(e) => setFormData({ ...formData, smsOptIn: e.target.checked })}
+  />
+  Notify students via SMS?
+</label>
+
+<input
+  type="tel"
+  name="phoneNumber"
+  placeholder="Enter phone number"
+  value={formData.phoneNumber}
+  onChange={(e) => setFormData({ ...formData, phoneNumber: e.target.value })}
+/>
