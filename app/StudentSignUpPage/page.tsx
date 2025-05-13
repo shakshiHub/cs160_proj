@@ -22,34 +22,38 @@ const StudentSignUpPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    const { password, confirmPassword, phone } = formData;
-    // requirements for password
-    const hasUpperCase = [...password].some(char => char >= 'A' && char <= 'Z'); // has at least 1 uppercase
-    const hasLowerCase = [...password].some(char => char >= 'a' && char <= 'z'); // has at least 1 lowercase
-    const hasNumber = [...password].some(char => char >= '0' && char <= '9'); // has at least 1 number
-    const isLong = password.length >= 8; // is 8 chars long
-
-    // requirements for phone number
-    const isLongPhone = phone.length == 10; // is 10 chars long (xxx xxx xxxx)
   
-    if (!hasUpperCase || !hasLowerCase || !hasNumber || !isLong) {
-      alert('Password must be at least 8 characters long and includ: an uppercase letter, a lowercase letter, and a number.');
+    const { email, password, confirmPassword, phone } = formData;
+  
+    // ✅ Check for SJSU email
+    if (!email.toLowerCase().endsWith('@sjsu.edu')) {
+      alert('Only SJSU email addresses are allowed. Please use your @sjsu.edu email.');
       return;
     }
-
+  
+    // ✅ Password requirements
+    const hasUpperCase = [...password].some(char => char >= 'A' && char <= 'Z');
+    const hasLowerCase = [...password].some(char => char >= 'a' && char <= 'z');
+    const hasNumber = [...password].some(char => char >= '0' && char <= '9');
+    const isLong = password.length >= 8;
+  
+    const isLongPhone = phone.length === 10;
+  
+    if (!hasUpperCase || !hasLowerCase || !hasNumber || !isLong) {
+      alert('Password must be at least 8 characters long and include: an uppercase letter, a lowercase letter, and a number.');
+      return;
+    }
+  
     if (!isLongPhone) {
       alert('Phone number must be valid length (10 digits) and only include numbers.');
       return;
     }
-
-    // Validate form
+  
     if (password !== confirmPassword) {
       alert('Passwords do not match!');
       return;
     }
-
-    // Send user data to the backend (API route)
+  
     const response = await fetch('/api/StudentSignUp', {
       method: 'POST',
       headers: {
@@ -57,15 +61,18 @@ const StudentSignUpPage = () => {
       },
       body: JSON.stringify(formData),
     });
-
+  
+    const result = await response.json();
+  
     if (response.ok) {
-      alert('Sign-up successful!');
-      // redirect to sign-in page STILL HAVENT SET UP SIGN IN FUNCTION- sorry
-      window.location.href = '/SignInPage';
-    } else {
-      alert('Sign-up failed. Please try again.');
+      localStorage.setItem('studentName', formData.name); // 👈 save name
+      window.location.href = '/ConfirmationPage';
+    }
+    else {
+      alert(result.error || 'Sign-up failed. Please try again.');
     }
   };
+  
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-150">
@@ -88,7 +95,7 @@ const StudentSignUpPage = () => {
                       placeholder="Email"
                       value={formData.email}
                       onChange={handleChange}
-                      pattern="^[a-zA-Z0-9._%+-]+@sjsu\.com$"
+                      pattern="^[a-zA-Z0-9._%+-]+@sjsu\.edu$"
                       required
                       className="bg-gray-100 outline-none text-m flex-1"
                     />
