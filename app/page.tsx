@@ -34,7 +34,7 @@ export default function Hero() {
             Welcome to Food<span className="text-blue-700">EZ</span>
           </h1>
           <p className="text-gray-500 text-base leading-relaxed">
-            where surplus food meets san jose state students.
+            Where Surplus Food Meets San Jose State Students.
           </p>
         </div>
 
