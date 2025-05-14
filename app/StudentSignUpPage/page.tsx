@@ -22,38 +22,38 @@ const StudentSignUpPage = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     const { email, password, confirmPassword, phone } = formData;
-  
+
     // ✅ Check for SJSU email
     if (!email.toLowerCase().endsWith('@sjsu.edu')) {
       alert('Only SJSU email addresses are allowed. Please use your @sjsu.edu email.');
       return;
     }
-  
+
     // ✅ Password requirements
     const hasUpperCase = [...password].some(char => char >= 'A' && char <= 'Z');
     const hasLowerCase = [...password].some(char => char >= 'a' && char <= 'z');
     const hasNumber = [...password].some(char => char >= '0' && char <= '9');
     const isLong = password.length >= 8;
-  
+
     const isLongPhone = phone.length === 10;
-  
+
     if (!hasUpperCase || !hasLowerCase || !hasNumber || !isLong) {
       alert('Password must be at least 8 characters long and include: an uppercase letter, a lowercase letter, and a number.');
       return;
     }
-  
+
     if (!isLongPhone) {
       alert('Phone number must be valid length (10 digits) and only include numbers.');
       return;
     }
-  
+
     if (password !== confirmPassword) {
       alert('Passwords do not match!');
       return;
     }
-  
+
     const response = await fetch('/api/StudentSignUp', {
       method: 'POST',
       headers: {
@@ -61,18 +61,19 @@ const StudentSignUpPage = () => {
       },
       body: JSON.stringify(formData),
     });
-  
+
     const result = await response.json();
-  
+
+
     if (response.ok) {
       localStorage.setItem('studentName', formData.name); // 👈 save name
-      window.location.href = '/ConfirmationPage';
+      window.location.href = '/UniqueCodePage';
     }
     else {
       alert(result.error || 'Sign-up failed. Please try again.');
     }
   };
-  
+
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-150">
@@ -165,12 +166,12 @@ const StudentSignUpPage = () => {
                       className="bg-blue-100 text-black outline-none text-m flex-1"
                     />
                   </div>
-                  
+
             </div>
           </AuroraBackground>
         </div>
         <div className="relative w-full left-58">
-          <Link href="/SignInPage" className="absolute left-0 top-5 flex items-center group">
+          <Link href="/" className="absolute left-0 top-5 flex items-center group">
             <div className="scale-130 border-2 border-blue-950 rounded-full p-1 flex items-center justify-center hover:bg-blue-950">
               <FaArrowLeft className="text-blue-950 group-hover:text-white transition-colors duration-200" />
             </div>

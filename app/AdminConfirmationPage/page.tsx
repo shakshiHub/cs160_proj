@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaArrowLeft } from 'react-icons/fa';
+import { FaArrowRight } from 'react-icons/fa';
+
 
 const ConfirmationPage = () => {
   const [studentName, setStudentName] = useState<string | null>(null);
@@ -43,21 +45,36 @@ const ConfirmationPage = () => {
 
             <div className="border-b-2 border-blue-950 w-full max-w-fit mb-4" />
             <p className="text-md text-gray-800 leading-relaxed">
-              ✅ You’ve successfully signed up! <br />
-              📬 Check your spam folder for any emails from <strong>ezefood09@gmail.com</strong>. <br />
-              🎉 Welcome to <strong>FoodEZ</strong> — real-time alerts when free food hits campus!
+                Welcome aboard,<br/>
+                 As an admin, you can log into your account at any time and post about surplus food opportunities to the SJSU community in less than a minute!
             </p>
           </div>
         </div>
 
-        {/* Back arrow */}
-        <div className="relative w-full left-58">
-          <Link href="/" className="absolute left-0 top-5 flex items-center group">
+        {/* Arrows container: Back on left, Login on right */}
+        <div className="flex justify-between w-full max-w-4xl mt-6 px-8">
+          {/* Back arrow */}
+          <Link href="/" className="flex items-center group">
             <div className="scale-130 border-2 border-blue-950 rounded-full p-1 flex items-center justify-center hover:bg-blue-950">
               <FaArrowLeft className="text-blue-950 group-hover:text-white transition-colors duration-200" />
             </div>
+            <span className="ml-2 text-blue-950 group-hover:text-white transition-colors duration-200 font-medium">
+            </span>
+          </Link>
+
+          {/* Login arrow */}
+          <Link href="/SignInPage" className="flex items-center group">
+            <span className="mr-2 text-blue-950 group-hover:text-blue transition-colors duration-500 font-medium">
+              Login
+            </span>
+            <div className="scale-130 border-2 border-blue-950 rounded-full p-1 flex items-center justify-center hover:bg-blue-950">
+              <FaArrowRight className="text-blue-950 group-hover:text-white transition-colors duration-200" />
+            </div>
           </Link>
         </div>
+
+
+
       </main>
     </div>
   );

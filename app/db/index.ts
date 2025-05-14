@@ -4,8 +4,8 @@ import { drizzle } from 'drizzle-orm/libsql';
 // config({ path: '.env' }); // or .env.local -- NOT WORKING
 //  dont need (hardcoding url/token since reference didn't work)
 
-const TURSO_CONNECTION_URL='libsql://myapp-smritijhaa.aws-us-west-2.turso.io';
-const TURSO_AUTH_TOKEN='eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpYXQiOjE3NDcxMDM2NjMsImlkIjoiNGZlNDhjNzYtYzYyYS00MGVjLTg5MTktNWViMGQ5MTQyNzc2IiwicmlkIjoiNzczZDE5MmMtZDNlMS00M2ZlLTliYmMtNzg1NGE2ODlhNjE2In0.qceJGz5lF9ZFCnLpySTWxPCo1_Vgvcc2WFWbfRFYzVs-COntI-mhb9KW_sfqhmMf79fHNPo8ssNT5clWOHjDDw'
+const TURSO_CONNECTION_URL= process.env.TURSO_CONNECTION_URL;;
+const TURSO_AUTH_TOKEN=process.env.TURSO_AUTH_TOKEN;
 
 export const db = drizzle({ 
     connection: {

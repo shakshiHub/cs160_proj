@@ -22,7 +22,8 @@ const AdminSignUpPage = () => {
       'faranak.abri@sjsu.edu',
       'sayma.akther@sjsu.edu',
       'william.andreopoulos@sjsu.edu',
-      'smriti.jha@sjsu.edu'
+      'shakshi.sharma@sjsu.edu'
+      //'smriti.jha@sjsu.edu'
       // Add more authorized admin emails here
     ];
 
@@ -44,7 +45,7 @@ const AdminSignUpPage = () => {
 
     // ✅ Check if the email is in the admin whitelist
     if (!allowedAdminEmails.includes(email.toLowerCase())) {
-      alert('Sorry, you are not currently recognized as having admin status at SJSU. If you believe this is a mistake, contact us at support@sjsufoodapp.com.');
+      alert('Sorry, you are not currently recognized as having admin status at SJSU. If you believe this is a mistake, contact us at ezefood09@gmail.com.');
       return;
     }
 
@@ -74,12 +75,14 @@ const AdminSignUpPage = () => {
 
     if (response.ok) {
       alert('Sign-up successful!');
-      window.location.href = '/SignInPage';
+      window.location.href = '/UniqueAdminCodePage';
     } else {
       const data = await response.json();
       alert(data.error || 'Sign-up failed. Please try again.');
     }
   };
+
+
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-150">
@@ -138,13 +141,17 @@ const AdminSignUpPage = () => {
                   >
                     Sign Up
                   </button>
+                  <p className="text-gray-400 text-sm mt-6">
+                                      Already have an admin account? <a href="/SignInPage" className="underline">Sign in here</a>
+                                    </p>
+
                 </form>
               </div>
             </div>
           </div>
 
           {/* Right Panel - Additional Info */}
-          <AuroraBackground className="rounded-tr-2xl rounded-br-2xl py-20 px-12 text-white min-h-131 max-w-112 min-w-100">
+          <AuroraBackground className="rounded-tr-2xl rounded-br-2xl py-20 px-12 text-white min-h-140 max-w-105 min-w-100">
             <div className="relative z-10">
               <h2 className="text-3xl font-bold">Additional Info</h2>
               <div className="border-2 w-10 border-white inline-block mb-2 hover:shadow-2xl transition-shadow duration-200"></div>
@@ -166,7 +173,7 @@ const AdminSignUpPage = () => {
 
         {/* Back Arrow */}
         <div className="relative w-full left-58">
-          <Link href="/SignInPage" className="absolute left-0 top-5 flex items-center group">
+          <Link href="/" className="absolute left-0 top-5 flex items-center group">
             <div className="scale-130 border-2 border-blue-950 rounded-full p-1 flex items-center justify-center hover:bg-blue-950">
               <FaArrowLeft className="text-blue-950 group-hover:text-white transition-colors duration-200" />
             </div>

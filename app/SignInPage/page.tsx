@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { MdMailOutline, MdOutlineVpnKey } from "react-icons/md";
+import { FaArrowLeft, FaPhone } from 'react-icons/fa';
 import { AuroraBackground } from "@/components/ui/aurora-background";
 
 const SignInPage = () => {
@@ -58,7 +59,7 @@ const SignInPage = () => {
               Food<span className="text-blue-700">EZ</span>
             </div>
             <div className="py-15">
-              <h2 className="text-3xl font-bold text-blue-950 mb-2">Faculty Sign In</h2>
+              <h2 className="text-3xl font-bold text-blue-950 mb-2">Admin Sign In</h2>
               <div className="border-2 w-10 border-blue-950 inline-block mb-4 mt-1"></div>
 
               <div className="flex flex-col items-center">
@@ -106,7 +107,9 @@ const SignInPage = () => {
                   Sign In
                 </button>
               </div>
+
             </div>
+
           </div>
 
           <AuroraBackground className="rounded-tr-2xl rounded-br-2xl py-20 px-12 text-white">

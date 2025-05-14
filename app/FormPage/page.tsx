@@ -116,7 +116,7 @@ const FormPage = () => {
                 Building and Room Number
               </h2>
               <div className="border-2 w-10 border-blue-950 mb-4" />
-              <Textarea placeholder="Ex. Macquarie Hall - Room 212" className="bg-gray-100 border-none text-gray-500 font-normal hover:shadow-2xl w-3/4 h-20 p-4 rounded-md focus:text-blue-950 hover:text-blue-950 placeholder-gray-200 hover:placeholder-blue-950" 
+              <Textarea placeholder="EX. Macquarie Hall - Room 212" className="bg-gray-100 border-none text-gray-500 font-normal hover:shadow-2xl w-3/4 h-20 p-4 rounded-md focus:text-blue-950 hover:text-blue-950 placeholder-gray-200 hover:placeholder-blue-950"
                 value={formData.building} onChange={(e) => setFormData({ ...formData, building: e.target.value })} />
             </div>
           </div>
