@@ -52,7 +52,7 @@ export default function UniqueCodePage() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-white py-4">
       {/* Back Arrow */}
       <Link
-        href="/SignInPage"
+        href="/"
         className="absolute top-4 left-4 p-2 border-2 border-blue-950 rounded-full text-blue-950 hover:bg-blue-950 hover:text-white transition"
       >
         <FaArrowLeft />
