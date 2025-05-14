@@ -91,7 +91,9 @@ const AdminSignUpPage = () => {
           {/* Left Panel - Form */}
           <div className="w-3/5 p-5">
             <div className="text-left font-bold">
+              <a href="/">
               Food<span className="text-blue-700">EZ</span>
+              </a>
             </div>
             <div className="py-15">
               <h2 className="text-3xl font-bold text-blue-950 mb-2">Admin Sign Up</h2>

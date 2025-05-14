@@ -71,7 +71,9 @@ const FormPage = () => {
         <div className="w-full max-w-6xl bg-white shadow-2xl rounded-2xl p-5 flex flex-col">
           {/* Header */}
           <div className="text-left font-bold mb-6">
-            Food<span className="text-blue-700">EZ</span>
+          <a href="/">
+              Food<span className="text-blue-700">EZ</span>
+              </a>
           </div>
           <div className="text-center font-bold text-blue-950 text-3xl mb-1">
             Extra Food?

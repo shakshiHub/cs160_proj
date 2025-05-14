@@ -36,7 +36,9 @@ const ConfirmationPage = () => {
           {/* Right: Text content */}
           <div className="w-3/5 p-8 flex flex-col items-start justify-center text-left">
             <div className="text-left font-bold mb-2 text-xl">
+              <a href="/">
               Food<span className="text-blue-700">EZ</span>
+              </a>
             </div>
 
             <h2 className="text-3xl font-bold text-blue-950 border-b-5 border-blue-950 inline-block pb-5 mb-2">

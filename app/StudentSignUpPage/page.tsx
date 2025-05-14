@@ -81,7 +81,9 @@ const StudentSignUpPage = () => {
         <div className="rounded-2xl shadow-2xl flex bg-white w-2/3 max-w-4xl">
           <div className="w-3/5 p-5">
             <div className="text-left font-bold">
+            <a href="/">
               Food<span className="text-blue-700">EZ</span>
+              </a>
             </div>
             <div className="py-15">
               <h2 className="text-3xl font-bold text-blue-950 mb-2">Spartan Sign Up</h2>
