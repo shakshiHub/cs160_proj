@@ -14,6 +14,18 @@ const AdminSignUpPage = () => {
     confirmPassword: '',
   });
 
+  // ✅ Admin whitelist
+  const allowedAdminEmails = 
+      ['dominic.abucejo@sjsu.edu', 
+      'dominic.abucejo@sjsu.edu',
+      'fabio.detroia@sjsu.edu',
+      'faranak.abri@sjsu.edu',
+      'sayma.akther@sjsu.edu',
+      'william.andreopoulos@sjsu.edu',
+      'smriti.jha@sjsu.edu'
+      // Add more authorized admin emails here
+    ];
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -27,6 +39,12 @@ const AdminSignUpPage = () => {
     // ✅ Enforce SJSU email
     if (!email.toLowerCase().endsWith('@sjsu.edu')) {
       alert('Only SJSU email addresses are allowed. Please use your @sjsu.edu email.');
+      return;
+    }
+
+    // ✅ Check if the email is in the admin whitelist
+    if (!allowedAdminEmails.includes(email.toLowerCase())) {
+      alert('Sorry, you are not currently recognized as having admin status at SJSU. If you believe this is a mistake, contact us at support@sjsufoodapp.com.');
       return;
     }
 
@@ -58,7 +76,8 @@ const AdminSignUpPage = () => {
       alert('Sign-up successful!');
       window.location.href = '/SignInPage';
     } else {
-      alert('Sign-up failed. Please try again.');
+      const data = await response.json();
+      alert(data.error || 'Sign-up failed. Please try again.');
     }
   };
 
