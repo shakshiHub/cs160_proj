@@ -42,7 +42,7 @@ const ConfirmationPage = () => {
             </div>
 
             <h2 className="text-3xl font-bold text-blue-950 border-b-5 border-blue-950 inline-block pb-5 mb-2">
-            {studentName ? `You're all set, ${studentName}!` : "You're all set!"}
+            {studentName ? `You're all set!` : "You're all set!"}
             </h2>
 
             <div className="border-b-2 border-blue-950 w-full max-w-fit mb-4" />
