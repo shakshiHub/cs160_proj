@@ -140,7 +140,7 @@ const StudentSignUpPage = () => {
               <h2 className="text-3xl font-bold">Additional Info</h2>
               <div className="border-2 w-10 border-white inline-block mb-2 hover:shadow-2xl transition-shadow duration-200"></div>
 
-              <div className="bg-blue-100 w-64 p-2 flex items-center rounded-2xl mb-3 hover:shadow-2xl transition-shadow duration-200">
+              <div className="bg-blue-100 w-64 p-2 flex items-center rounded-2xl mb-5 hover:shadow-2xl transition-shadow duration-200 shadow-black">
                     <MdDriveFileRenameOutline className="text-gray-400 mx-2 my-3" />
                     <input
                       type="text"
@@ -153,7 +153,7 @@ const StudentSignUpPage = () => {
                     />
                   </div>
 
-                  <div className="bg-blue-100 w-64 p-2 flex items-center rounded-2xl mb-3 hover:shadow-2xl transition-shadow duration-200">
+                  <div className="bg-blue-100 w-64 p-2 flex items-center rounded-2xl mb-5 hover:shadow-2xl transition-shadow duration-200 shadow-black">
                     <FaPhone className="text-gray-400 mx-2 my-3" />
                     <input
                       type="tel"
