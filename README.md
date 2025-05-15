@@ -1,6 +1,8 @@
 # 🍽️ FoodEZ
 
-FoodEZ is a lightweight and modern web app that allows users to submit details about extra food available on campus. Admins can view submissions and coordinate food redistribution efficiently.
+FoodEZ is a lightweight and modern web app that allows users to submit details about extra food available on campus. This web app was created to tackle the growing issue of food waste on our campus. By allowing event organizers to post
+available food, FoodEZ offers a solution for students in need of a meal while also
+promoting sustainability by reducing unnecessary food waste.
 
 ## Technology Used
 - **Next.js** (App Router)
@@ -8,8 +10,6 @@ FoodEZ is a lightweight and modern web app that allows users to submit details a
 - **Tailwind CSS**
 - **Turso DB** (powered by SQLite)
 - **Drizzle ORM**
-- **Shadcn UI**
-- **Vercel** (for deployment)
 
 ---
 ## Getting Started
