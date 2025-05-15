@@ -17,7 +17,7 @@ promoting sustainability by reducing unnecessary food waste.
 ### 1. **Setting Up the Project**
 git clone https://github.com/yourusername/foodez.git
 
-cd foodez
+cd into project
 
 Install dependencies: 
 
